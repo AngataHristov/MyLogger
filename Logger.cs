@@ -33,27 +33,45 @@ namespace MyLogger
 
         public void Info(string message)
         {
+            this.CheckForIncorrectMessage(message);
+
             this.Log(ReportLevels.Info, message);
         }
 
         public void Warn(string message)
         {
+            this.CheckForIncorrectMessage(message);
+
             this.Log(ReportLevels.Warn, message);
         }
 
         public void Error(string message)
         {
+            this.CheckForIncorrectMessage(message);
+
             this.Log(ReportLevels.Error, message);
         }
 
         public void Critical(string message)
         {
+            this.CheckForIncorrectMessage(message);
+
             this.Log(ReportLevels.Critical, message);
         }
 
         public void Fatal(string message)
         {
+            this.CheckForIncorrectMessage(message);
+
             this.Log(ReportLevels.Fatal, message);
+        }
+
+        private void CheckForIncorrectMessage(string message)
+        {
+            if (string.IsNullOrEmpty(message) || string.IsNullOrWhiteSpace(message))
+            {
+                throw new ArgumentNullException("Message cannot be null ot empty!");
+            }
         }
 
         private void Log(ReportLevels reportLevels, string message)
