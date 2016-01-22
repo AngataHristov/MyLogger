@@ -36,7 +36,7 @@ namespace MyLogger.Appenders
 
         private void CheckReportLevel(ReportLevels reportLevel, string result)
         {
-            if ((int)reportLevel >= (int)this.ReportLevel)
+            if (reportLevel >= this.ReportLevel)
             {
                 this.fileWriter.WriteLine(result);
             }

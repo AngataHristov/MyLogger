@@ -33,36 +33,26 @@ namespace MyLogger
 
         public void Info(string message)
         {
-            this.CheckForIncorrectMessage(message);
-
             this.Log(ReportLevels.Info, message);
         }
 
         public void Warn(string message)
         {
-            this.CheckForIncorrectMessage(message);
-
             this.Log(ReportLevels.Warn, message);
         }
 
         public void Error(string message)
         {
-            this.CheckForIncorrectMessage(message);
-
             this.Log(ReportLevels.Error, message);
         }
 
         public void Critical(string message)
         {
-            this.CheckForIncorrectMessage(message);
-
             this.Log(ReportLevels.Critical, message);
         }
 
         public void Fatal(string message)
         {
-            this.CheckForIncorrectMessage(message);
-
             this.Log(ReportLevels.Fatal, message);
         }
 
@@ -74,11 +64,13 @@ namespace MyLogger
             }
         }
 
-        private void Log(ReportLevels reportLevels, string message)
+        private void Log(ReportLevels reportLevel, string message)
         {
+            this.CheckForIncorrectMessage(message);
+
             DateTime dateTime = DateTime.Now;
 
-            this.Appender.Append(dateTime, reportLevels, message);
+            this.Appender.Append(dateTime, reportLevel, message);
         }
     }
 }

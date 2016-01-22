@@ -2,7 +2,6 @@
 namespace MyLogger
 {
     using System;
-    using System.Runtime.CompilerServices;
     using Appenders;
     using Enums;
     using Interfaces;
