@@ -1,6 +1,4 @@
-﻿
-
-namespace MyLogger.Appenders
+﻿namespace MyLogger.Appenders
 {
     using System;
     using Enums;
@@ -9,11 +7,12 @@ namespace MyLogger.Appenders
     public abstract class Appender : IAppender
     {
         private ILayout layout;
+        private const ReportLevels DefaultLevel = ReportLevels.Info;
 
-        protected Appender(ILayout layout)
+        protected Appender(ILayout layout, ReportLevels reportLevel = DefaultLevel)
         {
             this.Layout = layout;
-            this.ReportLevel = ReportLevels.Info;
+            this.ReportLevel = reportLevel;
         }
 
         public ReportLevels ReportLevel { get; set; }
@@ -33,5 +32,10 @@ namespace MyLogger.Appenders
         }
 
         public abstract void Append(DateTime dateTime, ReportLevels reportLevel, string message);
+
+        protected bool CheckReportLevel(ReportLevels reportLevel)
+        {
+            return (int)reportLevel >= (int)this.ReportLevel;
+        }
     }
 }

@@ -26,20 +26,15 @@ namespace MyLogger.Appenders
         {
             string result = this.Layout.MakeLayout(dateTime, reportLevel, message);
 
-            this.CheckReportLevel(reportLevel, result);
+            if (this.CheckReportLevel(reportLevel))
+            {
+                this.fileWriter.WriteLine(result);
+            }
         }
 
         public void Close()
         {
             this.fileWriter.Close();
-        }
-
-        private void CheckReportLevel(ReportLevels reportLevel, string result)
-        {
-            if (reportLevel >= this.ReportLevel)
-            {
-                this.fileWriter.WriteLine(result);
-            }
         }
     }
 }

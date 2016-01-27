@@ -5,7 +5,7 @@ namespace MyLogger
     using Enums;
     using Interfaces;
 
-    public class Logger : ILogger
+    public sealed class Logger : ILogger
     {
         private IAppender appender;
 

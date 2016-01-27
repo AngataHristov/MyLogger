@@ -16,12 +16,7 @@ namespace MyLogger.Appenders
         {
             string result = this.Layout.MakeLayout(dateTime, reportLevel, message);
 
-            this.CheckReportLevel(reportLevel, result);
-        }
-
-        private void CheckReportLevel(ReportLevels reportLevel, string result)
-        {
-            if ((int)reportLevel >= (int)this.ReportLevel)
+            if (base.CheckReportLevel(reportLevel))
             {
                 Console.WriteLine(result);
             }
