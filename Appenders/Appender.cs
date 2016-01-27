@@ -6,8 +6,9 @@
 
     public abstract class Appender : IAppender
     {
-        private ILayout layout;
         private const ReportLevels DefaultLevel = ReportLevels.Info;
+
+        private ILayout layout;
 
         protected Appender(ILayout layout, ReportLevels reportLevel = DefaultLevel)
         {
@@ -19,7 +20,11 @@
 
         public ILayout Layout
         {
-            get { return this.layout; }
+            get
+            {
+                return this.layout;
+            }
+
             set
             {
                 if (value == null)

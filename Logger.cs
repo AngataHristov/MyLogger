@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger
+﻿namespace MyLogger
 {
     using System;
     using Enums;
@@ -20,6 +19,7 @@ namespace MyLogger
             {
                 return this.appender;
             }
+
             set
             {
                 if (value == null)

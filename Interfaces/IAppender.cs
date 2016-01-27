@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger.Interfaces
+﻿namespace MyLogger.Interfaces
 {
     using System;
     using Enums;

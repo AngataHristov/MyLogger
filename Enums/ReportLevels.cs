@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger.Enums
+﻿namespace MyLogger.Enums
 {
     public enum ReportLevels
     {

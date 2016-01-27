@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger.Appenders
+﻿namespace MyLogger.Appenders
 {
     using System;
     using Enums;
@@ -16,7 +15,7 @@ namespace MyLogger.Appenders
         {
             string result = this.Layout.MakeLayout(dateTime, reportLevel, message);
 
-            if (base.CheckReportLevel(reportLevel))
+            if (this.CheckReportLevel(reportLevel))
             {
                 Console.WriteLine(result);
             }

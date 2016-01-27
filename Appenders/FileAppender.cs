@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger.Appenders
+﻿namespace MyLogger.Appenders
 {
     using System;
     using System.IO;

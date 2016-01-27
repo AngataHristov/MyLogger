@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger
+﻿namespace MyLogger
 {
     using System;
     using Appenders;
@@ -28,7 +27,6 @@ namespace MyLogger
                 logger.Critical("No connection string found in App.config");
                 logger.Fatal("mscorlib.dll does not respond");
 
-
                 Console.WriteLine(new string('-', 50));
 
                 consoleAppender.Layout = xmlLayout;
@@ -50,7 +48,6 @@ namespace MyLogger
                 logger.Fatal("mscorlib.dll does not respond");
 
                 Console.WriteLine(new string('-', 50));
-
 
                 try
                 {
@@ -91,7 +88,6 @@ namespace MyLogger
             try
             {
                 //Report Threshold testing
-
                 var simpleLayout = new SimpleLayout();
                 var consoleAppender = new ConsoleAppender(simpleLayout);
 

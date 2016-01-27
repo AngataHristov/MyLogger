@@ -1,5 +1,4 @@
-﻿
-namespace MyLogger.Layouts
+﻿namespace MyLogger.Layouts
 {
     using System;
     using System.Text;
